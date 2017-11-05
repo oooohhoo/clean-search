@@ -1,0 +1,10 @@
+{
+  "extName":{
+    "message": "Clean Search",
+    "description": "Extension name"
+  },
+
+  "extDescription":{
+    "message": "Make your search result clean"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extName":{
+    "message": "净搜",
+    "description": "扩展名称"
+  },
+
+  "extDescription":{
+    "message": "让你的搜索结果变得干净"
+  }
+}
