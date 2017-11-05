@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    font-size: 9pt;
+}
+
+body *{
+    white-space: nowrap;
+}
+
+#popup-content .item {
+    padding:4px 10px;
+}

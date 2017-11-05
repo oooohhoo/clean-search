@@ -47,6 +47,12 @@ function unhide_html(){
   $('html').css('visibility','visible');
 }
 
-removeAd();
-addObserver();
+
+
+chrome.storage.sync.get("baiduAdBlock",function (items) {
+  if(items["baiduAdBlock"]==true){
+    removeAd();
+    addObserver();
+  }
+});
 //unhide_html();

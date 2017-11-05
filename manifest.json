@@ -7,7 +7,7 @@
   "description": "__MSG_extDescription__",
 
   "background":{
-    "scripts": ["background.js"],
+    "scripts": ["js/background.js"],
     "persistent": false
   },
 
@@ -19,11 +19,11 @@
   "content_scripts":[{
       "run_at":"document_start",
       "matches": ["http://www.baidu.com/*", "https://www.baidu.com/*"],
-      "js":["jquery-3.2.1.js","hideHtml.js"]
+      "js":["js/jquery-3.2.1.js","js/hideHtml.js"]
     }, {
       "run_at":"document_end",
       "matches":["http://www.baidu.com/*", "https://www.baidu.com/*"],
-      "js":["jquery-3.2.1.js","rmAd.js"]
+      "js":["js/jquery-3.2.1.js","js/rmAd.js"]
     }
   ],
 
