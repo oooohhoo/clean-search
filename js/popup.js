@@ -104,7 +104,7 @@ function saveBackgroundColor(url, color) {
 // to a document's origin. Also, using chrome.storage.sync instead of
 // chrome.storage.local allows the extension data to be synced across multiple
 // user devices.
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
   getCurrentTabUrl((url) => {
     var dropdown = document.getElementById('dropdown');
     // Load the saved background color for this page and modify the dropdown
@@ -122,6 +122,43 @@ document.addEventListener('DOMContentLoaded', () => {
         //alert("I'm here");
       changeBackgroundColor(dropdown.value);
       saveBackgroundColor(url, dropdown.value);
+      //alert('changed');
     });
   });
+});*/
+function saveBaiduAdBlockState(isBlocked){
+  chrome.storage.sync.set({"baiduAdBlock":isBlocked});
+}
+
+function readBaiduAdBlockState(key, callback) {
+  chrome.storage.sync.get(key,(items)=>{
+    callback(chrome.runtime.lastError ? null:items[key]);
+  });
+}
+
+//alert($('[name="baidu-ad-block"]').length);
+$('[name="baidu-ad-block"]').click(function () {
+  //console.log($(this).attr('checked'));
+  if($(this).prop('checked')){
+    console.log("checked");
+    //$(this).prop('checked',false);
+    saveBaiduAdBlockState(true);
+  }else{
+    console.log("unchecked");
+    //$(this).prop('checked',true);
+    saveBaiduAdBlockState(false);
+  };
 });
+
+readBaiduAdBlockState("baiduAdBlock",function (result) {
+  //console.log(result);
+  if(result==null||result==false){
+    $('[name="baidu-ad-block"]').removeAttr('checked');
+  }
+});
+
+
+
+console.log('popup.js end');
+
+
