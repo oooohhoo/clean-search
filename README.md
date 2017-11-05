@@ -1,2 +1,2 @@
 # clean-search
-Make your search result clean
+This is a Chrome Extension that can remove Baidu Ads from Baidu search results.
