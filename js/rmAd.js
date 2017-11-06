@@ -39,7 +39,7 @@ function addObserver(){
     //console.log('removeAd()');
   });
   //console.log('addObserver');
-  observer.observe(document.querySelector('#content_left'),{'childList':true});
+  observer.observe(document.querySelector('#wrapper_wrapper'),{'childList':true,'subtree':true});
 }
 
 
